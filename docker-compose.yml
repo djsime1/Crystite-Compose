@@ -1,0 +1,15 @@
+version: '3'
+services:
+  crystite:
+    # build: ../Crystite
+    image: ghcr.io/djsime1/crystite
+    container_name: resonite-crystite
+    network_mode: host
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    env_file: .env
+    volumes:
+      - ./Config:/Config
+      - ./Logs:/Logs
+      - ./appsettings.json:/etc/crystite/conf.d/appsettings.json:ro
