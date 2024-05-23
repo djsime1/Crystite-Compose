@@ -10,6 +10,10 @@ services:
     tty: true
     env_file: .env
     volumes:
-      - ./Config:/Config
-      - ./Logs:/Logs
+      - ./Config:/Config:z
+      - ./Logs:/Logs:z
+      - assets:/Data:Z
       - ./appsettings.json:/etc/crystite/conf.d/appsettings.json:ro
+
+volumes:
+  assets:
