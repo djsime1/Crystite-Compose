@@ -13,7 +13,13 @@ services:
       - ./Config:/Config:z
       - ./Logs:/Logs:z
       - assets:/Data:Z
+      - game:/var/lib/crystite/Resonite:Z
       - ./appsettings.json:/etc/crystite/conf.d/appsettings.json:ro
+      # To enable modloader support, set MODLOADER=RML in .env and uncomment the following lines.
+      # - ./rml_mods:/var/lib/crystite/Resonite/rml_mods:z
+      # - ./rml_libs:/var/lib/crystite/Resonite/rml_libs:z
+      # - ./rml_config:/var/lib/crystite/Resonite/rml_config:z
 
 volumes:
   assets:
+  game:

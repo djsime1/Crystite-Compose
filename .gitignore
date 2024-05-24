@@ -1,4 +1,5 @@
 .env
-Config/Config.json
+Config/*
+!Config/Config.json.sample
 Logs/*
 !Logs/.gitkeep
